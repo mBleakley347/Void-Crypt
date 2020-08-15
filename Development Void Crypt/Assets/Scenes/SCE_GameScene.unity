@@ -170,6 +170,8 @@ MonoBehaviour:
   filled: []
   empty: []
   itemSpots: []
+  limit: 10
+  time: 10
 --- !u!4 &1124043672
 Transform:
   m_ObjectHideFlags: 0

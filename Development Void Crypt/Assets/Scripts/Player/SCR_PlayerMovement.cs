@@ -30,7 +30,7 @@ public class SCR_PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        rb.velocity = Vector3.Lerp(rb.velocity,(transform.right * Input.GetAxis("Vertical") * speed),1f);
+        rb.velocity = Vector3.Lerp(rb.velocity,(transform.right * Input.GetAxis("Vertical") * speed + (transform.forward * -Input.GetAxis("Horizontal") * speed/1.5f)),1f);
     }
     public void Rotate()
     {

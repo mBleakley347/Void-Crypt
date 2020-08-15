@@ -43,6 +43,8 @@ public class SCR_DungeonGenerator : MonoBehaviour
     public List<Vector2> empty;
     public List<GameObject> itemSpots;
 
+    public int limit;
+    public float time;
     public void Start()
     {
         currentModules = new List<SCR_DungeonSections>();
@@ -56,6 +58,18 @@ public class SCR_DungeonGenerator : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (time < 0)
+        {
+            currentModules = new List<SCR_DungeonSections>();
+            filled = new List<Vector2>();
+            empty.Clear();
+
+            startLocation.x = Random.Range(0, complexity + 5);
+            startLocation.y = Random.Range(0, complexity + 5);
+            empty.Add(startLocation);
+            setUp = false;
+            time = limit;
+        }
         if (!setUp)
         {
             blockLimit = new OpenAreas[complexity + 5, complexity + 5];
@@ -72,6 +86,11 @@ public class SCR_DungeonGenerator : MonoBehaviour
         if (empty.Count > 0)
         {
             PlanDungeon();
+            time -= Time.deltaTime;
+        }
+        else
+        {
+            time = limit;
         }
         
         if (itemSpots.Count > 0)
