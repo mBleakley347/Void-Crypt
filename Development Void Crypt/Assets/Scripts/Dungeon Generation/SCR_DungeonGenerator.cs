@@ -61,7 +61,7 @@ public class SCR_DungeonGenerator : MonoBehaviour
         if (time < 0)
         {
             currentModules = new List<SCR_DungeonSections>();
-            filled = new List<Vector2>();
+            filled.Clear();
             empty.Clear();
 
             startLocation.x = Random.Range(0, complexity + 5);
@@ -255,5 +255,6 @@ public class SCR_DungeonGenerator : MonoBehaviour
     public void SpawnPlayer()
     {
         Instantiate(player, new Vector3(startLocation.x * size, 1, startLocation.y * size), Quaternion.Euler(Vector3.zero));
+        Instantiate(Ending, new Vector3(filled[Random.Range(0,filled.Count)].x * size , 1, filled[Random.Range(0, filled.Count)].y * size), Quaternion.Euler(Vector3.zero));
     }
 }

@@ -163,7 +163,7 @@ MonoBehaviour:
   items: []
   player: {fileID: 9019185718366796669, guid: b41c079a37502e54b9cca70475eaf133, type: 3}
   Begining: {fileID: 0}
-  Ending: {fileID: 0}
+  Ending: {fileID: 7454655334461660606, guid: c180575ac2dcb00458c07b8e760d8fa7, type: 3}
   complexity: 5
   difficulty: 1
   startLocation: {x: 0, y: 0}
